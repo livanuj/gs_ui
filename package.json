@@ -1,6 +1,7 @@
 {
   "name": "fe-gym-square",
   "version": "0.1.0",
+  "proxy": "http://localhost:3005",
   "private": true,
   "dependencies": {
     "cra-template": "1.0.0",
