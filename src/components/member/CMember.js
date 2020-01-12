@@ -73,7 +73,7 @@ export default class CMember extends React.Component {
   showAddForm(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3005/api/gs/token")
+    fetch("/api/gs/token")
       .then(results => {
         return results.json();
       })
@@ -131,7 +131,7 @@ export default class CMember extends React.Component {
 
     const id = e.target.parentNode.parentElement.id;
 
-    fetch("http://localhost:3005/api/gs/token")
+    fetch("/api/gs/token")
       .then(results => {
         return results.json();
       })
@@ -141,7 +141,7 @@ export default class CMember extends React.Component {
         });
 
         //data
-        fetch("http://localhost:3005/api/gs/member/" + id)
+        fetch("/api/gs/member/" + id)
           .then(results => {
             return results.json();
           })
@@ -178,7 +178,7 @@ export default class CMember extends React.Component {
       joined_date: e.target.form.elements.joined_date.value
     };
 
-    fetch("http://localhost:3005/api/gs/member/update/" + id, {
+    fetch("/api/gs/member/update/" + id, {
       method: "PUT",
       body: JSON.stringify(postData),
       headers: {
@@ -225,7 +225,7 @@ export default class CMember extends React.Component {
       id: id
     };
 
-    fetch("http://localhost:3005/api/gs/member/remove/" + id, {
+    fetch("/api/gs/member/remove/" + id, {
       method: "DELETE",
       body: JSON.stringify(postData),
       headers: {
